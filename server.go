@@ -19,11 +19,10 @@ func main() {
 			"message": "OK",
 		})
 	})
-
-	server.GET("/list", func(ctx *gin.Context) {
+	server.GET("/video", func(ctx *gin.Context) {
 		ctx.JSON(200, videoController.FindAll())
 	})
-	server.POST("/list", func(ctx *gin.Context) {
+	server.POST("/video", func(ctx *gin.Context) {
 		ctx.JSON(200, videoController.Save(ctx))
 	})
 	server.Run(":8080")
