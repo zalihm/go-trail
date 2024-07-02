@@ -22,8 +22,12 @@ func main() {
 	server.GET("/video", func(ctx *gin.Context) {
 		ctx.JSON(200, videoController.FindAll())
 	})
+
 	server.POST("/video", func(ctx *gin.Context) {
 		ctx.JSON(200, videoController.Save(ctx))
 	})
+
+	server.StaticFile("/hello.json", "./public/hello.json")
+
 	server.Run(":8080")
 }
