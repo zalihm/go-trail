@@ -8,7 +8,7 @@ RUN apk update && apk add --no-cache 'git=~2'
 
 # Install dependencies
 ENV GO111MODULE=on
-WORKDIR ./
+WORKDIR /
 COPY . .
 
 # Fetch dependencies.
